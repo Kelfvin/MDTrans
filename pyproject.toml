@@ -5,5 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">= 3.11"
 dependencies = [
-    "mineru-vl-utils[vllm]>=0.2.3",
+    "asyncio>=4.0.0",
+    "httpx[socks]>=0.28.1",
+    "mineru[core,vllm]>=3.0.9",
 ]
