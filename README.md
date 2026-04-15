@@ -6,11 +6,11 @@
 
 **Convert any English PDF document into Chinese Markdown.**
 
-MDTrans preserves the document structure from the source PDF, including text, headings, lists, and tables, and translates the content into Simplified Chinese. The final translated Markdown file is written beside the original Markdown with a `.zh.md` suffix.
+MDTrans supports both digitally generated PDFs and scanned PDFs. It preserves the document structure from the source PDF, including text, headings, lists, and tables, and translates the content into Simplified Chinese. Because translation is performed with larger LLM context windows, MDTrans usually achieves better document-level consistency and overall translation quality than typical short-context translation tools. The final translated Markdown file is written beside the original Markdown with a `.zh.md` suffix.
 
 ## How It Works
 
-MDTrans first calls the official `mineru` CLI from an async Python subprocess to convert a PDF into Markdown, then uses LangChain and an OpenAI-compatible chat model to translate the generated Markdown into Simplified Chinese.
+MDTrans first calls the official `mineru` CLI from an async Python subprocess to convert a PDF into Markdown, including scanned-document workflows supported by MinerU, then uses LangChain and an OpenAI-compatible chat model to translate the generated Markdown into Simplified Chinese with larger document context rather than fragmented sentence-by-sentence translation.
 
 ## Requirements
 

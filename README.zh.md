@@ -6,13 +6,12 @@
 
 **将任意英文 PDF 文档转换中文的 Markdown 文档！**。
 
-
-转换过程将保留 PDF 中的文本内容、标题、列表、表格等结构，并将文本翻译成简体中文。最终输出的 Markdown 文件将以 `.zh.md` 结尾，表示这是原始 Markdown 的中文版本。
+支持数字原生 PDF 和扫描件 PDF。转换过程将保留 PDF 中的文本内容、标题、列表、表格等结构，并将文本翻译成简体中文。由于翻译阶段利用了大模型较长的上下文窗口，MDTrans 在文档级一致性和整体翻译效果上通常优于一般的短上下文翻译软件。最终输出的 Markdown 文件将以 `.zh.md` 结尾，表示这是原始 Markdown 的中文版本。
 
 
 ## 原理
 
-MDTrans 先通过异步 Python 子进程调用官方 `mineru` CLI 完成 PDF 转 Markdown，再使用 LangChain 和兼容 OpenAI 的聊天模型，将生成的 Markdown 翻译为简体中文。
+MDTrans 先通过异步 Python 子进程调用官方 `mineru` CLI 完成 PDF 转 Markdown，包括 MinerU 支持的扫描件处理流程，再使用 LangChain 和兼容 OpenAI 的聊天模型，在较大的文档上下文中将生成的 Markdown 翻译为简体中文，而不是碎片化地逐句翻译。
 
 ## 环境要求
 
