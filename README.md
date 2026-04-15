@@ -24,7 +24,7 @@ uv tool install mdtrans
 
 ## Configuration
 
-The configuration file is located at `~/.config/mdtrans/config.toml`. If it does not exist, MDTrans creates a template for you on first run.
+The configuration file is located at `~/.config/mdtrans/config.toml`. Create it if it does not exist.
 
 ```toml
 [llm]
@@ -56,3 +56,16 @@ The tool runs in this order:
 3. Run `mineru -p <selected-pdf> -o <output-dir> -b hybrid-auto-engine`
 4. Discover the generated Markdown files under the chosen output directory
 5. Write translated Chinese copies as `*.zh.md` beside the original Markdown files
+
+## Roadmap
+
+- [x] Basic translation support
+- [ ] Service and Docker deployment: package MDTrans as a RESTful API service and provide a Docker image for easier deployment and usage
+- [ ] Long-document translation: build an agent-based workflow to support very long documents, including 300+ pages
+- [ ] Evaluation and optimization of translation performance across different models
+- [ ] Support for more target languages, such as Japanese and Korean
+- [ ] More translation options, such as formal/informal tone and terminology handling
+
+## Disclaimer
+
+MDTrans is designed to provide a convenient PDF-to-Markdown translation workflow, but translation quality can still be affected by model capability, document complexity, and context window limits. For important or sensitive documents, review and polish the output manually after the initial translation to ensure accuracy and readability. MDTrans is not responsible for any loss or misunderstanding caused by translation errors.
