@@ -1,6 +1,6 @@
-CONFIG_PATH = "config.toml"
+CONFIG_PATH = "~/.config/mdtrans/config.toml"
 BACKEND = "hybrid-auto-engine"
-RESERVED_OUTPUT_TOKENS = 4000
+OUTPUT_TOKEN_MARGIN = 512
 
 TRANSLATION_SYSTEM_PROMPT = """You translate Markdown from English to Simplified Chinese.
 
@@ -9,5 +9,6 @@ Rules:
 - Translate natural language text into Simplified Chinese only.
 - Keep fenced code, inline code, URLs, image paths, link destinations, HTML tags, YAML frontmatter keys, tables, and formulas structurally unchanged.
 - Do not merge headings, paragraphs, captions, tables, or formulas together.
+- ATX headings starting with `#` must stay on their own lines, with heading text only.
 - Do not add or remove blank lines.
 - Return Markdown only. Do not add explanations."""
