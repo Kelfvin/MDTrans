@@ -18,6 +18,7 @@ This demo runs the official `mineru` CLI from an async Python subprocess, then t
 [llm]
 base_url = "https://api.openai.com/v1"
 model = "gpt-4.1-mini"
+context_window = 64000
 ```
 
 `OPENAI_API_KEY` is intentionally not read from `config.toml`. Keep it in the environment, for example through your existing `env.sh`.
@@ -55,5 +56,16 @@ The program exits immediately if:
 - `config.toml` is missing
 - `[llm]` is missing from `config.toml`
 - `llm.base_url` or `llm.model` is empty
+- `llm.context_window` is missing or invalid
 
 If the `mineru` subprocess fails, the script raises an error with the command and `stderr` output.
+
+## Token Tool
+
+To estimate document length with a general OpenAI tokenizer:
+
+```bash
+python tools/token_length.py path/to/file.md
+```
+
+This tool reads a single UTF-8 text file and prints character count, line count, and token count using `cl100k_base`.

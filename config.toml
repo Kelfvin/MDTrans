@@ -1,3 +1,4 @@
 [llm]
 base_url = "https://api.deepseek.com"
 model = "deepseek-chat"
+context_window = 64000

@@ -10,14 +10,15 @@ dependencies = [
     "langchain>=0.3.27",
     "langchain-openai>=0.3.35",
     "mineru[core,vllm]>=3.0.9",
+    "tiktoken>=0.12.0",
 ]
 
 [project.scripts]
-mdtrans = "main:cli"
+mdtrans = "mdtrans.cli:cli"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-include = ["main.py"]
+include = ["mdtrans"]
