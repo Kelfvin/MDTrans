@@ -7,5 +7,17 @@ requires-python = ">= 3.11"
 dependencies = [
     "asyncio>=4.0.0",
     "httpx[socks]>=0.28.1",
+    "langchain>=0.3.27",
+    "langchain-openai>=0.3.35",
     "mineru[core,vllm]>=3.0.9",
 ]
+
+[project.scripts]
+mdtrans = "main:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+include = ["main.py"]
