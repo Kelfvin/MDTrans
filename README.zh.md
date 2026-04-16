@@ -19,6 +19,13 @@ MDTrans 先通过异步 Python 子进程调用官方 `mineru` CLI 完成 PDF 转
 
 ## 安装
 
+(1) 由于依赖 mineru 工具解析 PDF 为 Markdown，所以需要先安装 mineru：
+
+```bash
+uv tool install "mineru[core,vllm]"
+```
+
+(2) 安装 MDTrans：
 ```bash
 uv tool install mdtrans
 ```
@@ -51,6 +58,9 @@ export OPENAI_API_KEY="your-api-key"
 ```bash
 mdtrans /path/to/input.pdf /path/to/output-dir
 ```
+
+> [!WARNING]
+> 第一次启动时，MinerU 可能需要下载一些模型文件，所以启动速度会很慢。
 
 脚本会按下面的顺序执行：
 
