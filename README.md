@@ -14,7 +14,7 @@ MDTrans first calls the official `mineru` CLI from an async Python subprocess to
 
 ## Requirements
 
-- A GPU capable of running MinerU, ideally with at least 16 GB of VRAM
+- A GPU capable of running MinerU ([at least 8GB VRAM, recommended 16GB or more](https://github.com/opendatalab/MinerU/blob/master/docs/zh/quick_start/docker_deployment.md))
 
 ## Installation
 

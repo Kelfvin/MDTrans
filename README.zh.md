@@ -15,7 +15,7 @@ MDTrans 先通过异步 Python 子进程调用官方 `mineru` CLI 完成 PDF 转
 
 ## 环境要求
 
-- 一张能够运行 Mineru 的 GPU（建议至少 16GB 显存）
+- 一张能够运行 Mineru 的 GPU（[至少 8GB VRAM，推荐 16GB 及以上](https://github.com/opendatalab/MinerU/blob/master/docs/zh/quick_start/docker_deployment.md)）
 
 ## 安装
 
