@@ -32,7 +32,7 @@ uv tool install mdtrans
 
 ## Configuration
 
-The configuration file is located at `~/.config/mdtrans/config.toml`. Create it if it does not exist.
+The configuration file is located at `~/.config/mdtrans/config.toml`. The program will create it on the first run, or you can choose to create it manually.
 
 ```toml
 [llm]

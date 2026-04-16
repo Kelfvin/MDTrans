@@ -32,7 +32,7 @@ uv tool install mdtrans
 
 ## 配置
 
-配置文件位于 `~/.config/mdtrans/config.toml`，如果没有请创建。
+配置文件位于 `~/.config/mdtrans/config.toml`，程序会在第一次运行的时候创建，也可以选择手动创建。
 
 
 ```toml
