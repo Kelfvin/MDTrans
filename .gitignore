@@ -12,3 +12,8 @@ tmp
 model
 .codex
 AGENTS.md
+
+
+# Added by cargo
+
+/target
