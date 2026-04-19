@@ -1,0 +1,33 @@
+[package]
+
+categories = ["command-line-utilities", "text-processing"]
+description = "Convert any English PDF document into Chinese Markdown."
+edition = "2024"
+keywords = ["markdown", "translation", "llm", "cli"]
+license = "AGPL-3.0"
+name = "transmd"
+readme = "README.md"
+repository = "https://github.com/Kelfvin/TransMD"
+version = "0.1.0"
+[dependencies]
+anyhow = "1.0.102"
+async-openai = {version = "0.35.0", features = ["chat-completion"]}
+clap = {version = "4.6.1", features = ["derive"]}
+dirs = "6.0.0"
+pulldown-cmark = {version = "0.13", default-features = false}
+serde = {version = "1.0", features = ["derive"]}
+tiktoken-rs = "0.11.0"
+tokio = {version = "1.52.1", features = ["macros", "rt-multi-thread", "fs", "process"]}
+toml = "1.1.2"
+walkdir = "2.5.0"
+
+[[bin]]
+name = "transmd"
+path = "src/bin/cli.rs"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
