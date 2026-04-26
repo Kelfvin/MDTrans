@@ -8,6 +8,8 @@
 
 TransMD supports both digitally generated PDFs and scanned PDFs. The conversion process preserves the structure of the source PDF, including text, headings, lists, and tables, and translates the content into Simplified Chinese. Because the translation stage uses a large context window from an LLM, TransMD usually delivers better document-level consistency and overall translation quality than typical short-context translation tools. The final output Markdown file ends with `.zh.md`, indicating that it is the Chinese version of the original Markdown.
 
+![alt text](images/workflow.png)
+
 ## How It Works
 
 TransMD first calls the official `mineru` CLI to convert a PDF into Markdown, including MinerU's scanned-document processing workflow. It then uses an LLM to translate the generated Markdown into Simplified Chinese with a larger document context, instead of translating it sentence by sentence in fragmented chunks.
